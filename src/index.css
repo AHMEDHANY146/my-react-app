@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --primary: #f97316; /* Orange */
+  --primary-hover: #ea580c;
+  --secondary: #fbbf24; /* Amber/Gold */
+  --accent: #451a03; /* Deep Brown */
+  --bg-gradient: linear-gradient(135deg, #451a03 0%, #7c2d12 100%);
+  --glass-bg: rgba(255, 255, 255, 0.07);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --text-main: #fff7ed;
+  --text-muted: #fdba74;
+  --white: #ffffff;
+  
+  font-family: 'Cairo', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  direction: rtl; /* RTL Support */
+  color-scheme: dark;
+  color: var(--text-main);
+  background: var(--bg-gradient);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Glassmorphism Utility */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Buttons */
+.btn {
+  padding: 12px 28px;
+  border-radius: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 4px 14px 0 rgba(249, 115, 22, 0.4);
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(249, 115, 22, 0.3);
+}
+
+.btn-secondary {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--white);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+}
+
+/* Layout Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 24px;
+  text-align: right;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.form-input {
+  width: 100%;
+  padding: 14px 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  color: white;
+  font-family: 'Cairo', sans-serif;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  text-align: right;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.15);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #451a03;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ea580c;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f97316;
+}
+
+/* --- Responsive Utility Classes --- */
+
+/* Navbar */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+/* Hero Section */
+.hero-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 300px;
+  text-align: right;
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.hero-desc {
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  max-width: 500px;
+  margin-bottom: 40px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+/* Dashboard */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* --- Media Queries --- */
+@media (max-width: 768px) {
+  /* Layout */
+  .container {
+    padding: 0 16px;
+  }
+  
+  /* Navbar */
+  .nav-links {
+    display: none;
+  }
+  .mobile-menu {
+    display: flex;
+  }
+  
+  /* Hero Section */
+  .hero-wrapper {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 24px;
+  }
+  .hero-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-title {
+    font-size: 3rem;
+  }
+  .hero-desc {
+    font-size: 1.2rem;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Dashboard */
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Forms */
+  .glass-card {
+    padding: 32px 24px !important;
+  }
+}
